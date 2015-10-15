@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+var BrowserSync = require('laravel-elixir-browsersync');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,6 +12,20 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass('app.scss');
+elixir(function (mix) {
+    mix.sass('app.scss', './public/css/app.css')
+    mix.sass('styles.scss', './public/css/styles.css')
+        .browserSync({
+            files: [
+                'public/css/*.css',                     // This is the one required to get the CSS to inject
+                'resources/views/**/*.blade.php',       // Watch the views for changes & force a reload
+                'app/**/*.php'                      // Watch the app files for changes & force a reload
+            ],
+            proxy: 'christopher.app',
+            logPrefix: "Laravel Eixir BrowserSync",
+            logConnections: false,
+            reloadOnRestart: false,
+            notify: false,
+            open: false
+        });
 });

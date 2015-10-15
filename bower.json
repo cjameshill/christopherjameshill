@@ -1,0 +1,19 @@
+{
+  "name": "SANDBOX",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cjameshill/web-project-base",
+  "authors": [
+    "Chris Hill <hello@christopherjameshill.com>"
+  ],
+  "description": "Base Web Project",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "susy": "~2.2.6",
+    "mappy-breakpoints": "~0.2.1",
+    "bourbon": "~4.2.5"
+  }
+}
