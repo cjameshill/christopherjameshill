@@ -1,0 +1,573 @@
+@import "./bower_components/susy/sass/susy";
+@import "./bower_components/mappy-breakpoints/mappy-breakpoints";
+@import "./node_modules/gulp-sass";
+@import "./node_modules/bourbon";
+
+//////////////////////// VARIABLES /////////////////////
+
+$white: #fff;
+$light: #f0f0f0;
+$grey: #6a6a6a;
+$dark: #151515;
+$orange: #ff7600;
+$yellow: #ffd800;
+$blue: #00baff;
+$purple: #3b006c;
+$brown: #1f1600;
+$black: #000;
+
+
+
+$alpha: 0.7;
+
+$article: #fff;
+
+$fontLight: 100;
+$fontMed: 400;
+$bold: 600;
+$heavy: 800;
+
+$fontWeight:800;
+
+$acolor: #454545;
+$ahover: #a3a3a3;
+
+$tighter: -0.04em;
+$tightSpacing: -0.02em;
+$normalSpacing: 0;
+$spaced: 0.2em;
+
+$border: 8px;
+
+$sectionH: 650px;
+
+$topBarH: 7rem;
+
+$off-canvas-width: 50%;
+$transition: all 300ms ease-in-out;
+
+@include selection {
+  background-color: $orange;
+}
+
+$font1: 'fira-sans-2', helvetica, sans-serif;
+$font2: 'aktiv-grotesk-std', 'Aktiv Grotesk', helvetica, sans-serif;
+
+$navButtonColor: white;
+$navButtonFont: $font1;
+$navButtonWeight: 800;
+$navButtonTransform: uppercase;
+$navButtonbgColor: $orange;
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+    container: auto,
+  container-position: center,
+  columns: 12,
+    gutter-position: after,
+  gutters: 0,
+  debug: (
+    image: hide,
+    color: rgba(#ff66a7, .80),
+    output: background,
+    toggle: top right,
+  )
+);
+
+
+$base-font-size: 9px; 
+
+$breakpoints: (
+  'small'     : 320px,
+  'med'       : 640px,
+  'large'     : 920px,
+  'wide'      : 1200px,
+  'mega'      : 1400px,
+  );
+
+
+
+section {
+    .bgOverlay:after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: $sectionH;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+//----------------------- Primary Styles ------------- //
+
+html {
+    font-size: $base-font-size;
+  
+    @include mappy-bp(large) {
+          font-size: 16px;
+        }
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+           @include background(linear-gradient(#f0f0f0, #ffffff) left repeat);   
+}
+
+p { 
+    margin-bottom: 1.3em;
+    font-family: $font1;
+    font-weight: $bold;
+    font-size: 1.7em;
+    line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, small {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0.9em;
+    font-family: $font1;
+    font-weight: 800;
+    color: $dark;
+}
+
+h1 {font-size: 6em; letter-spacing: $tightSpacing;}
+
+h2 {font-size: 4.236em; letter-spacing: $tightSpacing;}
+
+h3 {font-size: 2.618em; letter-spacing: $tighter;}
+
+h4 {font-size: 1.618em;}
+
+small, .font_small {font-size: 1em;}
+
+strong { font-weight: $bold; }
+
+hr { width: 60%; margin: 2em auto;}
+
+a {
+    &:active {text-decoration: none; color: $acolor;}
+    &:visited {text-decoration: none; color: $acolor;}
+    &:hover {text-decoration: none; color: $ahover;}
+    &:link {text-decoration: none; color: $acolor;}
+}
+
+
+@include border-box-sizing;
+
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+/////////////////////   DOM STYLES  /////////////////
+
+.topBar, header, section, .content, .grid, .row, .item, .logo, nav, .bg, .logo img, nav li, .menu-toggle {
+    display: block;
+    @include clearfix;
+    @include transition($transition);
+}
+
+section, .topBar, .content {
+    width: 100%;
+    overflow: hidden;
+}
+
+section {
+    position: relative;
+    min-height: $sectionH;
+    
+    &:first-of-type {
+            .content { padding: 12rem 0 5rem 0 !important; }
+
+    }
+}
+
+header {
+    margin: 0.2em !important;
+    padding: 0.7em 0 !important;
+//    background: $light;
+    text-align: center;
+    font-family: $font1;
+    color: $dark;
+    line-height: 0.8em;
+    font-weight: $bold;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+article {
+    margin: 0 !important;
+    padding: 0.7em !important;
+}
+
+.grid {
+    @include container(90%);
+    padding: gutter();
+    
+    .row {
+        padding: gutter();
+        @include span(12);
+        
+        .item {
+            @include span(12);
+            min-height: 14rem;
+            margin: gutter();
+            background-color: $light;
+//            &:last-child { @include gallery(12 last); }
+            
+            @include mappy-bp(large) {
+                @include gallery(6);
+                &:last-child { @include gallery(6 last); }
+                }
+            
+            &:hover { background-color: $orange; }
+        }
+    }
+}
+
+nav {
+    ul {
+        li {
+            color: $navButtonColor;
+            font-family: $navButtonFont;
+            font-weight: $navButtonWeight;
+            text-transform: $navButtonTransform;
+            margin: 0;
+            padding: 0 0.6em;
+            line-height: 2em;
+            
+            &:hover {
+                background: $navButtonbgColor;
+            }
+            
+        }
+    }
+}
+
+.bg {
+    @include background-cover();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+}
+
+.cover {
+//        @include background(linear-gradient($black, #2e2e2e) left repeat);   
+
+//    .bg { background: url('../images/bg_stadium_2.jpg') repeat center center; }
+}
+
+
+.s2, .footer {
+    background: $dark;
+    header h3, header h2, p { color: $light; }
+    
+}
+
+.s3 {
+    .bg { background: url('../images/bg_stadium_3.jpg') repeat center center; }
+}
+
+
+#grid_partnership { 
+    @include container(80%);
+    .item {
+            background-color: $light !important;
+        }
+}
+
+#grid_ourteam {  
+    @include container(100%);
+    @include layout(12 .1);
+    .item {
+            background-color: rgba($dark, 0.9) !important;
+            header { color: white !important; }
+        }
+}
+
+#grid_footer {
+    .item {
+        background-color: transparent !important;
+        header { color: white !important; }
+            }
+}
+
+
+
+
+
+.topBar {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    padding: 0 3rem;
+    height: $topBarH;
+    background: rgba($dark, $alpha*0);
+    
+    .menu-toggle {
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: $topBarH;
+            font-size: 1.5em;
+            color: $navButtonColor;
+            font-family: $navButtonFont;
+            font-weight: $navButtonWeight;
+            text-transform: $navButtonTransform;
+            margin: 0;
+            padding: 0 0.6em;
+            line-height: $topBarH;
+            background: $orange;
+    }    
+    
+    .logo img {
+        height: ($topBarH)-2;
+        margin: 0.4em 0;
+        width: auto;
+    }
+    
+    nav {
+        position: absolute;
+        top: 0;
+        right: 8rem;
+        transform: translate3d(0, -$topBarH*2, 0);
+        
+        @include mappy-bp(med) {
+            transform: translate3d(0, 0, 0);
+        }
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 1.7em;
+                    text-align: center;
+                    line-height: $topBarH;
+                }
+            }
+    }
+}
+
+.topBar.reduce {
+    height: ($topBarH)-3;
+        background: rgba($dark, $alpha);
+    @include transition($transition); 
+    
+    .menu-toggle { line-height: ($topBarH)-3; }
+     li { line-height: ($topBarH)-3; font-size: 1.2em }
+    .logo img { @include transform(scale(0.5) translateY(-1.9rem)); }
+}
+
+
+/////////////////////   OFF CANVAS  /////////////////
+
+.off-canvas-wrapper {
+    display:  block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+   
+}
+
+.off-canvas {
+    display: block;
+    @include transition($transition); 
+    position: absolute;
+    top: 0;
+    left: -$off-canvas-width;
+    height: 100%;
+    width: $off-canvas-width;
+    background: black;
+//    @include background(linear-gradient($black, #2e2e2e) left repeat);   
+    pointer-events:all;
+    padding: 0;
+    margin: 0;
+    
+    .content {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        font-size: 2em !important;
+        line-height: 0.8em !important;
+        &:hover {
+            line-height: 2em !important;
+        }
+    }
+    
+    .logo {
+        width: ($off-canvas-width*2);
+        height: 16rem;
+        background: none;
+        text-align: center;
+        padding: 5rem 1rem;
+        
+        
+        img { width: 8rem; height: auto; }
+        
+    }
+       
+}
+
+.main {
+    display: block;
+    z-index: 10;
+    @include transition($transition); 
+    
+}
+
+.off-canvas.is-open {
+        transform: translate3d($off-canvas-width*2, 0, 0);
+        
+}
+
+
+.main.is-open {
+        transform: translate3d($off-canvas-width, 0, 0);
+    .bgFullOverlay.is-open {
+        background: rgba(0, 0, 0, 1)!important;
+    }
+}
+
+
+/////////////////////   FORMS  /////////////////
+
+.form-group{
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 500px;
+    padding: 30px;
+    background: #FFFFFF;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-group h2{
+    background: #4D4D4D;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #797979;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="datetime"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="search"],
+.form-group input[type="time"],
+.form-group input[type="url"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select 
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+.form-group textarea{
+    resize:none;
+    overflow: hidden;
+}
+.form-group input[type="button"], 
+.form-group input[type="submit"]{
+    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    background-color: $orange;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.form-group input[type="button"]:hover, 
+.form-group input[type="submit"]:hover {
+    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+    background-color:#ca6834;
+}
+
+
+///////////////////////   FOOTER  /////////////////
+//
+//
+//
+//
+//.footer {
+//    background: $dark;
+//    bottom: 0;
+//
+//        .content {
+//            padding-top: 3rem;
+//        }
+//    
+//        .grid {
+//            margin: 2rem 0;
+//            padding: 0;
+//            
+//            header {
+//                color: $grey;
+//                font-size: 1.5em;
+//            }
+//        
+//            .item {
+//                @include span(6);
+//                display: block;
+//                padding: gutter();
+//                min-height: 5rem;
+//                
+//                &:last-child {
+//                    @include span(6 last);
+//                    
+//                }
+//            }
+//        }
+//    
+//        .copyright {
+//            position: absolute;
+//            bottom: 0;
+//            height: 1.5em;
+//            width: 100%;
+//            color: $light;
+//            text-align: center;
+//            font-family: $font1;
+//            font-weight: 800;
+//        }
+//    
+//}

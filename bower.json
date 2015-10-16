@@ -13,7 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "susy": "~2.2.6",
-    "mappy-breakpoints": "~0.2.1",
-    "bourbon": "~4.2.5"
+    "mappy-breakpoints": "~0.2.1"
   }
 }
