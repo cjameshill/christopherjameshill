@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Christopher</div>
+                <div class="title">Christopher James Hill</div>
             </div>
         </div>
     </body>
