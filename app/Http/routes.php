@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', 'PagesController@index');
+Route::get('/home', 'PagesController@index');
+
+Route::get('about', 'PagesController@about');
+
+Route::controllers ([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
+Route::resource('articles', 'ArticlesController');
