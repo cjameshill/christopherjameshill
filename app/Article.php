@@ -21,25 +21,25 @@ class Article extends Model
         {
         $query->where('published_at', '<=', Carbon::now());
     }
-    
-    public function scopeUserId($query)
-        {
-        $query->where('user_id', '=', \Auth::user()->id);
-    }
-    
-    public function scopeUnPublished($query)
-        {
-        $query->where('published_at', '>', Carbon::now());
-    }
-    
-    public function setPublishedAtAttribute($date)
-        {
-        $this->attributes['published_at'] = Carbon::parse($date);
-    }
-    
-    public function user()
-        {
-            return $this->belongsTo('App\User');
-        }
+//    
+//    public function scopeUserId($query)
+//        {
+//        $query->where('user_id', '=', \Auth::user()->id);
+//    }
+//    
+//    public function scopeUnPublished($query)
+//        {
+//        $query->where('published_at', '>', Carbon::now());
+//    }
+//    
+//    public function setPublishedAtAttribute($date)
+//        {
+//        $this->attributes['published_at'] = Carbon::parse($date);
+//    }
+//    
+//    public function user()
+//        {
+//            return $this->belongsTo('App\User');
+//        }
     
 }

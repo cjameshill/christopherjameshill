@@ -1,7 +1,7 @@
-@import "./bower_components/susy/sass/susy";
+@import "bourbon";
+@import "susy";
 @import "./bower_components/mappy-breakpoints/mappy-breakpoints";
-@import "./node_modules/gulp-sass";
-@import "./node_modules/bourbon";
+
 
 //////////////////////// VARIABLES /////////////////////
 
@@ -267,8 +267,8 @@ nav {
 }
 
 .cover {
-//        @include background(linear-gradient($black, #2e2e2e) left repeat);   
-
+//    background: $orange;
+//@include background(linear-gradient(#f0f0f0, #ffffff) left repeat);
 //    .bg { background: url('../images/bg_stadium_2.jpg') repeat center center; }
 }
 

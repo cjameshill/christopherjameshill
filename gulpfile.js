@@ -1,6 +1,12 @@
 var elixir = require('laravel-elixir');
 var BrowserSync = require('laravel-elixir-browsersync');
 
+
+var paths = {
+'bourbon': './node_modules/bourbon/app/assets/stylesheets/',
+'susy': './bower_components/susy/sass/'
+}
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -14,12 +20,12 @@ var BrowserSync = require('laravel-elixir-browsersync');
 
 elixir(function (mix) {
     mix.sass('app.scss', './public/css/app.css')
-    mix.sass('styles.scss', './public/css/styles.css')
+    mix.sass('styles.scss', './public/css/styles.css', {includePaths: [paths.bourbon, paths.susy]})
         .browserSync({
             files: [
-                'public/css/*.css',                     // This is the one required to get the CSS to inject
-                'resources/views/**/*.blade.php',       // Watch the views for changes & force a reload
-                'app/**/*.php'                      // Watch the app files for changes & force a reload
+                'public/css/*.css',                     
+                'resources/views/**/*.blade.php',       
+                'app/**/*.php'                      
             ],
             proxy: 'christopher.app',
             logPrefix: "Laravel Eixir BrowserSync",
