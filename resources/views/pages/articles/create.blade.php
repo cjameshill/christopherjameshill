@@ -4,7 +4,7 @@
      <section class="articles">
          <div class="content"> 
                       <header>
-                            <h4>Create an Article</h4>
+                            <h2>Create an Article</h2>
                         </header>
                        <hr/>
   

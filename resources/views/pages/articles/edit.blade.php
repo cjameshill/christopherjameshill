@@ -4,7 +4,7 @@
      <section class="articles">
          <div class="content"> 
                       <header>
-                            <h4>Edit: <i>{!! $article->title !!}</i></h4>
+                            <h2>Edit: <i>{!! $article->title !!}</i></h2>
                         </header>
                        <hr/>
                   {!! Form::model($article, [$article, 'method' => 'PATCH', 'action' => ['ArticlesController@update', $article->id]]) !!}

@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
   });
     
     $( window ).scroll(function() {
-        if( $(window).scrollTop() >= 200 ) {
+        if( $(window).scrollTop() >= 100 ) {
         $topbar.addClass('reduce');
         $offcanvas.removeClass('is-open');
         $main.removeClass('is-open');

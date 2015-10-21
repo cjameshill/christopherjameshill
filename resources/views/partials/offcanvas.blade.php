@@ -1,23 +1,20 @@
 <div class="off-canvas-wrapper">
         <div class="off-canvas">
             <div class="content">
-            <div class="logo"><img src="/images/logo.png" alt="THE CLEVELAND BROWNS ICON"></div>
+            <div class="logo"><span>Christopher.</span></div>
                
                 <nav>
                     <ul>
-                        <a href="/">
+                        <a href="{{ route('home') }}">
                             <li>Home</li>
                         </a>
-                        <a href="/articles">
+                        <a href="{{ route('articles.index') }}">
                             <li>Articles</li>
                         </a>
-                        <a href="#">
-                            <li>Statistics</li>
+                        <a href="{{ route('about') }}">
+                            <li>About Me</li>
                         </a>
-                        <a href="#">
-                            <li>The Browns</li>
-                        </a>
-                        <a href="#">
+                        <a href="{{ route('about') }}">
                             <li>Our Team</li>
                         </a>
                     </ul>

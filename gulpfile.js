@@ -7,20 +7,11 @@ var paths = {
 'susy': './bower_components/susy/sass/'
 }
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
 
 elixir(function (mix) {
-    mix.sass('app.scss', './public/css/app.css')
-    mix.sass('styles.scss', './public/css/styles.css', {includePaths: [paths.bourbon, paths.susy]})
+    mix.sass('app.scss', './public/css/app.css', {includePaths: [paths.bourbon, paths.susy]})
+        .styles(['normalize.css', 'app.css'], null, 'public/css')
+        
         .browserSync({
             files: [
                 'public/css/*.css',                     
@@ -34,4 +25,5 @@ elixir(function (mix) {
             notify: false,
             open: false
         });
+    mix.version('public/css/all.css');
 });

@@ -8,11 +8,14 @@
                     <div class="grid">
                      <div class="row">
                       <header>
-                            <h4><a href="/articles">Articles</a></h4>
+                            <h1><a href="{{ route('articles.index') }}">Articles</a></h1>
                         </header>
                         
                        <h1>{{ $article->title }}</h1>
-                       <h3><a href="{{ $article->id }}/edit">Edit</a></h3>
+                        @if (Auth::check()) 
+                            <h3><a href="{{ $article->id }}/edit">Edit</a></h3>
+                        @endif
+                       
                   
                           <article>
                           <p>{!! $article->body !!}</p>
