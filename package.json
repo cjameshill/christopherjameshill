@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "bourbon": "^4.2.5",
-    "laravel-elixir": "^3.0.0"
+    "laravel-elixir": "^3.0.0",
+    "laravel-elixir-browsersync": "^0.1.5"
   }
 }
