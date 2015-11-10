@@ -1,0 +1,168 @@
+/* BASE
+========================================================================== */
+html { font-size: $base-font-size;
+    @include mappy-bp(large) {
+          font-size: 14px;
+        }
+}
+
+#contentWrapper, footer, header, section, .content, .bg { /* Clearfix */
+    @include clearfix;
+}
+#contentWrapper, footer, header, section, .content, div { /* Display Block */
+    display: block;
+}
+
+.alertBar, .loginBar, .topBar, .topBar div, li, .logo img { /* Transition */
+    @include transition($transition);
+}
+
+
+section, footer, .topBar, .copyright, .content, .sectionHeader, .footerHeader, .bg, .alertBar, .loginBar, .logoutButton, .loginButton {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+section, footer { /* Position Relative */
+    position: relative;
+}
+
+.bg, .logoutButton, .loginButton, nav, .copyright { /* Position Absolute */
+    position: absolute;
+}
+
+.topBar, .alertBar, .loginBar  { /* Position Fixed */
+    position: fixed;
+}
+
+.topBar, .bg { /* Position Top Left */
+    top: 0;
+    left: 0;
+}
+
+body, .content, .bg, footer, section, ul, .topBar, .logoutButton, .loginButton { /* Margin 0 Padding 0 */
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE ELEMENTS
+========================================================================== */
+
+section {
+    z-index: index($elements, section);
+    min-height: 100vh;
+    background: $fourthColor;
+
+    .content {
+        z-index: -3;
+  
+    } 
+    
+}
+
+footer {
+    z-index: index($elements, footer);
+    .content {
+        z-index: index($sectionElements, contents);
+    } 
+    
+}
+
+&.first { .content { padding: 12rem 0 0 0 !important; } }
+
+
+header {
+    text-align: center;
+    text-transform: uppercase;
+    @include margin(0, 1em 0);
+}
+
+.sectionHeader, .footerHeader {
+    h1, h2, h3 { text-align: right; font-family: $font1; font-weight: 400; letter-spacing: -0.04em;  } 
+}
+
+
+article {
+    margin: 0;
+    padding: 0.7em;
+}
+
+.logo {
+    width: auto;
+}
+
+img { 
+    height: 100%;
+    width: auto;
+}
+
+.copyright {
+    bottom: 0;
+    line-height: 2em;
+    font-family: $font1;
+    font-size: 1.5em;
+    color: $thirdColor;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* GRID
+========================================================================== */
+
+.grid, .row { @include margin(0, gutter()); }
+
+.grid {
+    @include container();
+}
+
+.row {
+    @include span(12);
+}
+
+.item {
+    @include span(12);
+    margin-bottom: gutter();
+
+    @include mappy-bp(med) {
+        @include span(6);
+        padding: gutter();
+        &:last-child { @include span(6 last); }
+        }
+}
+
+
+
+/* NAVIGATION
+========================================================================== */
+
+nav {
+    li {
+        color: $navButtonColor;
+        font-family: $navButtonFont;
+        font-weight: $navButtonWeight;
+        text-transform: $navButtonTransform;
+        letter-spacing: $navButtonLetterSpacing;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background: $navButtonbgColor;
+        }
+    }    
+}
+
+
+/* TOPBAR
+========================================================================== */
+
+   
+.topBar {
+    height: $topBarH;
+    background: none;
+    z-index: index($elements, topBar);
+}
+
+
+

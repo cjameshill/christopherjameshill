@@ -1,8 +1,8 @@
-<section class="footer">
+<footer>
                     <div class="content">
                         <div class="grid">
                            <div class="row">
-                            <header><h2>Get in touch with our Team.</h2>
+                            <header class="footerHeader"><h2>Get in touch with our Team.</h2>
                                   </header>                   </div>
                            </div>
                            <div class="grid" id="grid_footer">
@@ -16,4 +16,4 @@
                                 </div>
                            </div>             
                         </div>
-            </section>
+            </footer>

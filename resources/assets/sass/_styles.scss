@@ -1,0 +1,109 @@
+/* STYLES
+========================================================================== */
+.userButton { background: $userButtonBg; &:hover { background: $userButtonHover; } }
+
+.logo { height: $topBarH; }
+
+.topBar {
+    nav {
+        top: 0;
+        right: 1rem;
+        height: $topBarH;
+    }
+    
+    ul {
+        .buttons { display: none; }
+        .divider { border-right: 3px solid $primaryColor !important; }
+        .menu-toggle { display: inline-block; }
+         
+        @include mappy-bp(med) {
+                .buttons { display: inline-block; }
+                .menu-toggle { display: none; }
+                }
+    }
+    
+    li {
+        display: inline-block;
+        line-height: $topBarH;  
+        font-size: $navButtonFontSize;
+        padding: 0 0.3em;
+        }
+                
+         
+}
+
+.topBar.reduce {
+    height: ($topBarH)-3;
+    background: $topBarBg;
+    
+    .userButton, li, .logo span { line-height: ($topBarH)-3; }
+    
+     li, .logo span { color: $secondaryColor; font-size: 1.7em;}
+
+    .logo img { @include transform(scale(0.5) translateY(-3.2rem)); }
+}
+
+.topBar.slideUp {
+    @include transform(translateY(-($topBarH*2)));
+}
+
+.alertBar, .loginBar {
+    h1, h2, h3 {color: $primaryColor; text-transform: none;}
+}
+
+.alertBar {
+    background: $alertBarBg;
+    z-index: 999999;
+    height: $topBarH;
+}
+
+.loginBar {
+    background: $loginBarBg;
+     z-index: 999980; 
+    height: $loginBarH;
+    padding-top: 9em;
+    top: -$loginBarH;
+    
+    .logoutButton, .loginButton {
+        bottom: 0;
+        left: 0;
+        background: $loginButtonBg;
+        color: $loginButtonColor;
+        text-align: center;
+        font-family: $font1;
+        font-size: 2.5em;
+        line-height: 2em;
+        text-transform: uppercase;
+        
+        &:hover {
+            background: $loginButtonHoverBg;
+            color: $loginButtonHoverColor;
+        }
+     
+    }
+}
+
+.loginBar.is-open { transform: translate3d(0, $loginBarH, 0); }
+.topBar nav ul li.is-open { color: $secondaryColor;}    
+.topBar nav ul li.closeButton { display: none;}
+
+
+/* SECTIONS
+========================================================================== */
+
+
+
+/* FOOTER
+========================================================================== */
+
+footer {
+    bottom: 0;
+    height: 100vh;
+    background: $dark;
+    
+    .footerHeader h2 { color: $secondaryColor; }
+    
+    .item {
+        header h3 { color: $secondaryColor; }
+        }
+}

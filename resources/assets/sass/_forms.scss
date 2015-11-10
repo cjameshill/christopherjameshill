@@ -1,5 +1,36 @@
 /////////////////////   FORMS  /////////////////
 
+
+form {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+label {
+    font-family: $font2;
+    text-align: center;
+    font-size: 1.5em;
+    color: $grey;
+    text-transform: uppercase;
+    line-height: 1.5em;
+}
+
+input[type="email"],
+input[type="password"]{
+    text-align: center;
+    font-family: $font2;
+    width: auto;
+    background: white;
+    padding: 0.5em;
+    border: none;
+    font-size: 2em;
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px);
+}
+
+
 .form-group{
     font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;

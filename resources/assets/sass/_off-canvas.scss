@@ -1,0 +1,85 @@
+/* OFF-CANVAS
+========================================================================== */
+
+.off-canvas-wrapper {
+    display:  block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: index($elements, off-canvas);
+   
+}
+
+.off-canvas {
+    display: block;
+    @include transition($transition); 
+    position: absolute;
+    top: 0;
+    left: -$off-canvas-width;
+    height: 100%;
+    width: $off-canvas-width;
+//    background: black;
+    @include background(linear-gradient(#ffffff, #f0f0f0) left repeat);   
+    pointer-events:all;
+    padding: 0;
+    margin: 0;
+    
+    .content {
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    li {
+        font-size: 2.8em !important;
+        color: $grey;
+        text-align: left;
+        padding: 0.2em 0.3em !important;
+        line-height: 0.8em !important;
+        &:hover {
+            color: white;
+        }
+    }
+    
+    .logo {
+        width: ($off-canvas-width*2);
+        height: 16rem;
+        background: none;
+        text-align: center;
+        padding: 5rem 1rem;
+        
+        span { color: white; font-size: 30px; }
+        
+        img { width: 8rem; height: auto; }
+        
+    }
+       
+}
+
+.main {
+    display: block;
+    z-index: index($elements, main);
+    @include transition($transition); 
+    
+}
+
+.off-canvas.is-open {
+        transform: translate3d($off-canvas-width*2, 0, 0);
+        
+}
+
+
+.main.is-open {
+        transform: translate3d($off-canvas-width, 0, 0);
+    .bgFullOverlay.is-open {
+        background: rgba(0, 0, 0, 1)!important;
+    }
+}
+

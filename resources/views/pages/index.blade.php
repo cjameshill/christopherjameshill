@@ -2,9 +2,9 @@
 
 @section('content')
     
-    <section class="cover">
+    <section class="first" id="section_cover">
            <div class="content">
-              <header>
+              <header class="sectionHeader">
                   <h1>Welcome.</h1>
               </header>
                
