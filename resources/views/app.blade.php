@@ -5,8 +5,7 @@
     <title>Christopher James Hill</title>
 <!--    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">-->
 <link rel="stylesheet" href="/css/all.css">
-<link href='https://fonts.googleapis.com/css?family=Raleway:700,300|Anton|Passion+One|Lato:400,100' rel='stylesheet' type='text/css'>
-
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 <body>
 

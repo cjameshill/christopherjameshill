@@ -1,3 +1,4 @@
+<!--
 <div class="topBar">
       
                   <div class="logo"><a href="{{ route('home') }}"><span>Christopher</span></a></div>
@@ -15,4 +16,4 @@
                     <div class="divider"></div>
                     <div class="menu-toggle">Login</div>
 
-                </div>
+                </div>-->

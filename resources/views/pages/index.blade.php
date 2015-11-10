@@ -1,19 +1,19 @@
 @extends('master')
 
 @section('content')
-    
-    <section class="first" id="section_cover">
-           <div class="content">
-              <header class="sectionHeader">
-                  <h1>Welcome.</h1>
-              </header>
+            <section class="cover">
+                   <div class="flex-container">
+                       <div class="new">Christopher James Hill</div>
+                        
+                    </div> 
+                
+               </section>
                
-            <div class="grid">
-                    <div class="item">
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita perspiciatis pariatur sit ratione minus, a impedit esse distinctio nemo repellat excepturi officia illum quas velit natus praesentium accusamus, unde. Numquam.</p>
-                        </div>
-                </div>               </div>
-        </section>
-      
-
+                <section id="section_contact">
+                   <div class="flex-container">
+                       <a href="mailto:hello@christopherjameshill.com"><div class="email">hello@<br>christopher<br>james<br>hill.com</div></a>
+                        
+                    </div> 
+                
+               </section>
 @endsection

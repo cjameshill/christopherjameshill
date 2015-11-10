@@ -1,3 +1,4 @@
+<!--
 <footer>
                     <div class="content">
                         <div class="grid">
@@ -16,4 +17,4 @@
                                 </div>
                            </div>             
                         </div>
-            </footer>
+            </footer>-->

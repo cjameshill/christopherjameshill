@@ -6,14 +6,14 @@ html { font-size: $base-font-size;
         }
 }
 
-#contentWrapper, footer, header, section, .content, .bg { /* Clearfix */
+#contentWrapper, footer, header, section, .content, .bg, .logo { /* Clearfix */
     @include clearfix;
 }
 #contentWrapper, footer, header, section, .content, div { /* Display Block */
     display: block;
 }
 
-.alertBar, .loginBar, .topBar, .topBar div, li, .logo img { /* Transition */
+.alertBar, .loginBar, .topBar, .topBar div, li, .logo img, .flex-item { /* Transition */
     @include transition($transition);
 }
 
@@ -41,7 +41,7 @@ section, footer { /* Position Relative */
     left: 0;
 }
 
-body, .content, .bg, footer, section, ul, .topBar, .logoutButton, .loginButton { /* Margin 0 Padding 0 */
+body, .content, .bg, footer, section, ul, .topBar, .logoutButton, .loginButton, .flex-container, .logo { /* Margin 0 Padding 0 */
     margin: 0;
     padding: 0;
 }
@@ -52,44 +52,27 @@ body, .content, .bg, footer, section, ul, .topBar, .logoutButton, .loginButton {
 section {
     z-index: index($elements, section);
     min-height: 100vh;
-    background: $fourthColor;
+    @include linearGradient($gradientWhite, $gradientLight);
 
-    .content {
-        z-index: -3;
-  
-    } 
-    
 }
 
 footer {
     z-index: index($elements, footer);
-    .content {
-        z-index: index($sectionElements, contents);
-    } 
-    
+ 
 }
 
 &.first { .content { padding: 12rem 0 0 0 !important; } }
 
 
-header {
-    text-align: center;
-    text-transform: uppercase;
-    @include margin(0, 1em 0);
-}
 
 .sectionHeader, .footerHeader {
     h1, h2, h3 { text-align: right; font-family: $font1; font-weight: 400; letter-spacing: -0.04em;  } 
 }
 
 
-article {
-    margin: 0;
-    padding: 0.7em;
-}
 
 .logo {
-    width: auto;
+    h1 {color: $thirdColor;}
 }
 
 img { 
@@ -130,6 +113,57 @@ img {
         padding: gutter();
         &:last-child { @include span(6 last); }
         }
+}
+
+
+
+
+.flex-container {
+    height: 100vh;
+    padding: 3em;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+
+
+.new, .email {
+    font-family: $font1;
+    font-size: 6em;
+    color: $thirdColor;
+    text-align: center;
+    line-height: 1.2em;
+//    background: $gradientGrey;
+    
+}
+
+.logo, .email {
+    display: block;
+    height: auto;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
 }
 
 
