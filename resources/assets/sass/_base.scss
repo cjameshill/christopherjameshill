@@ -54,18 +54,10 @@ section {
     min-height: 100vh;
     @include linearGradient($gradientWhite, $gradientLight);
 
-    .content {
-        z-index: -3;
-  
-    } 
-    
 }
 
 footer {
     z-index: index($elements, footer);
-    .content {
-        z-index: index($sectionElements, contents);
-    } 
     
 }
 

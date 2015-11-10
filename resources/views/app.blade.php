@@ -10,9 +10,17 @@
 <body>
 
         @yield('container')
-        
-       
+  
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>     
     <script src="/js/main.js" type="text/javascript"></script>
+    <script src="/js/parallax.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/skrollr.min.js"></script>
+    <script type="text/javascript">
+    if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+    skrollr.init({
+        forceHeight: false
+    });
+        }
+    </script>
 </body>
 </html>
