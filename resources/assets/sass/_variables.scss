@@ -46,7 +46,7 @@ $loginButtonColor: $light;
 $loginButtonHoverBg: $dark;
 $loginButtonHoverColor: $light;
 
-$font1: 'Lobster', helvetica, sans-serif;
+$font1: 'Passion One', helvetica, sans-serif;
 $font2: 'Lato', helvetica, sans-serif;
 
 $navButtonColor: $primaryColor;
@@ -144,6 +144,7 @@ p {
 
 h1, h2, h3, h4, h5, small, span {
     text-align: center;
+    text-transform: uppercase;
     line-height: 0.9em;
     font-family: $font1;
     font-weight: 400;

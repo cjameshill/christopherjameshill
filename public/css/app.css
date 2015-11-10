@@ -23,8 +23,9 @@ p {
 
 h1, h2, h3, h4, h5, small, span {
   text-align: center;
+  text-transform: uppercase;
   line-height: 0.9em;
-  font-family: "Lobster", helvetica, sans-serif;
+  font-family: "Passion One", helvetica, sans-serif;
   font-weight: 400;
   margin: 0.3em;
   padding: 0.3em;
@@ -91,9 +92,9 @@ html {
     html {
       font-size: 14px; } }
 
-#contentWrapper, footer, header, section, .content, .bg, .logo {
+#contentWrapper, footer, header, section, .content, .bg {
   /* Clearfix */ }
-  #contentWrapper::after, footer::after, header::after, section::after, .content::after, .bg::after, .logo::after {
+  #contentWrapper::after, footer::after, header::after, section::after, .content::after, .bg::after {
     clear: both;
     content: "";
     display: table; }
@@ -102,7 +103,7 @@ html {
   /* Display Block */
   display: block; }
 
-.alertBar, .loginBar, .topBar, .topBar div, li, .logo img, .flex-item {
+.alertBar, .loginBar, .topBar, .topBar div, li, .logo img {
   /* Transition */
   transition: all 200ms ease-in-out; }
 
@@ -128,7 +129,7 @@ section, footer {
   top: 0;
   left: 0; }
 
-body, .content, .bg, footer, section, ul, .topBar, .logoutButton, .loginButton, .flex-container, .logo {
+body, .content, .bg, footer, section, ul, .topBar, .logoutButton, .loginButton {
   /* Margin 0 Padding 0 */
   margin: 0;
   padding: 0; }
@@ -138,24 +139,36 @@ body, .content, .bg, footer, section, ul, .topBar, .logoutButton, .loginButton, 
 section {
   z-index: 2;
   min-height: 100vh;
-  background: #fff;
-  background: linear-gradient(to bottom, #fff 0%, #e8e8e8 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); }
+  background: #e8e8e8; }
+  section .content {
+    z-index: -3; }
 
 footer {
   z-index: 1; }
+  footer .content {
+    z-index: 2; }
 
 .first .content {
   padding: 12rem 0 0 0 !important; }
 
+header {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 1em 0; }
+
 .sectionHeader h1, .sectionHeader h2, .sectionHeader h3, .footerHeader h1, .footerHeader h2, .footerHeader h3 {
   text-align: right;
-  font-family: "Lobster", helvetica, sans-serif;
+  font-family: "Passion One", helvetica, sans-serif;
   font-weight: 400;
   letter-spacing: -0.04em; }
 
-.logo h1 {
-  color: #6a6a6a; }
+article {
+  margin: 0;
+  padding: 0.7em; }
+
+.logo {
+  width: auto; }
 
 img {
   height: 100%;
@@ -164,7 +177,7 @@ img {
 .copyright {
   bottom: 0;
   line-height: 2em;
-  font-family: "Lobster", helvetica, sans-serif;
+  font-family: "Passion One", helvetica, sans-serif;
   font-size: 1.5em;
   color: #6a6a6a;
   text-align: center;
@@ -208,53 +221,11 @@ img {
         float: right;
         margin-right: 0; } }
 
-.flex-container {
-  height: 100vh;
-  padding: 3em;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-line-pack: center;
-  -webkit-align-content: center;
-  align-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
-.new, .email {
-  font-family: "Lobster", helvetica, sans-serif;
-  font-size: 6em;
-  color: #6a6a6a;
-  text-align: center;
-  line-height: 1.2em; }
-
-.logo, .email {
-  display: block;
-  height: auto;
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  -ms-flex-item-align: center;
-  -webkit-align-self: center;
-  align-self: center; }
-
 /* NAVIGATION
 ========================================================================== */
 nav li {
   color: #151515;
-  font-family: "Lobster", helvetica, sans-serif;
+  font-family: "Passion One", helvetica, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: -0.03em;
@@ -343,7 +314,7 @@ nav li {
     background: #ff7600;
     color: #e8e8e8;
     text-align: center;
-    font-family: "Lobster", helvetica, sans-serif;
+    font-family: "Passion One", helvetica, sans-serif;
     font-size: 2.5em;
     line-height: 2em;
     text-transform: uppercase; }
@@ -365,6 +336,15 @@ nav li {
 ========================================================================== */
 /* FOOTER
 ========================================================================== */
+footer {
+  bottom: 0;
+  height: 100vh;
+  background: #151515; }
+  footer .footerHeader h2 {
+    color: #fff; }
+  footer .item header h3 {
+    color: #fff; }
+
 form {
   margin: 0;
   padding: 0;

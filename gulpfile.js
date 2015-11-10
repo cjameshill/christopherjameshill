@@ -18,7 +18,7 @@ elixir(function (mix) {
                 'resources/views/**/*.blade.php',       
                 'app/**/*.php'                      
             ],
-            proxy: 'christopher.app',
+            proxy: 'sandbox.app',
             logPrefix: "Laravel Eixir BrowserSync",
             logConnections: false,
             reloadOnRestart: false,
