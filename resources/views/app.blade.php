@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="xmKOnEyXpWt2UF79jDPO394-QnSyCzTlSxBe0qKjGH4" />
     <title>Christopher James Hill</title>
 <!--    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">-->
 <link rel="stylesheet" href="/css/all.css">
